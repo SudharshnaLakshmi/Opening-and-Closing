@@ -28,15 +28,15 @@ import matplotlib.pyplot as plt
 import cv2
 
 # Create the Text using cv2.putText
-text_image = np.zeros((100,440),dtype = 'uint8')
+text_image = np.zeros((110,820),dtype = 'uint8')
 font = cv2.FONT_HERSHEY_SIMPLEX = 3
-cv2.putText(text_image,"Sudharshna",(5,70),font,2,(255),5,cv2.LINE_AA)
+cv2.putText(text_image,"Sudharshna Lakshmi S",(5,70),font,2,(255),5,cv2.LINE_AA)
 plt.title("Original Image")
 plt.imshow(text_image)
 plt.axis('off')
 
 # Create the structuring element
-kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(11,11))
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,11))
 
 # Use Opening operation
 opening_image = cv2.morphologyEx(text_image,cv2.MORPH_OPEN,kernel)
